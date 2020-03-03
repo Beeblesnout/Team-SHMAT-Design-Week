@@ -67,6 +67,7 @@ public class CameraController : MonoBehaviour
     // Private Variables
     private Transform cameraPivot;
     private new Camera camera;
+    private Vector3 targetPos;
 
     // ----Start Methods-------------------------------------------------------------------
 
@@ -85,7 +86,17 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        transform.position = CalcAnchorPoint();
+        float changeTime;
+        // float 
+        var prevTargetPos = targetPos;
+        targetPos = CalcAnchorPoint();
+        if (targetPos != prevTargetPos)
+        {
+            changeTime = Time.time;
+            
+        }
+
+        transform.position = Vector3.Lerp(transform.position, targetPos, .1f);
     }
 
     // ----Helper Methods------------------------------------------------------------------
