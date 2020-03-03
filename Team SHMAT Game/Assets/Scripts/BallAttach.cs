@@ -6,7 +6,7 @@ public class BallAttach : MonoBehaviour
 {
     public GameObject host; //keeps track of which player is carrying the ball 
 
-    public float aheadDistance = 8f; //determines how far ahead of player the ball is when attached to player
+    public float aheadDistance = 3f; //determines how far ahead of player the ball is when attached to player
     private bool collided = false;
 
     private Rigidbody rb; 
@@ -26,7 +26,8 @@ public class BallAttach : MonoBehaviour
     public void AttachTo(GameObject player)
     {
         rb.velocity = Vector3.zero; //stop ball from rolling 
-        rb.constraints = RigidbodyConstraints.FreezePosition;
+        rb.isKinematic = true; 
+        //rb.constraints = RigidbodyConstraints.FreezePosition;
 
         Vector3 newPos = player.transform.position; 
         newPos += player.transform.forward * aheadDistance; //move ball to player's front
@@ -70,11 +71,19 @@ public class BallAttach : MonoBehaviour
     public void KickBallWithForce(Vector3 direction, float forceAmount)
     {
         transform.SetParent(null); //ball is released from player 
-        host = null; 
-        rb.constraints &= ~RigidbodyConstraints.FreezePositionX;
-        rb.constraints &= ~RigidbodyConstraints.FreezePositionZ; //unfreeze ball's horizontal movement 
+        host = null;
+        rb.isKinematic = false;
+        //rb.constraints &= ~RigidbodyConstraints.FreezePositionX;
+        //rb.constraints &= ~RigidbodyConstraints.FreezePositionZ; //unfreeze ball's horizontal movement 
 
         rb.AddForce(direction * forceAmount, ForceMode.Impulse);
-        collided = false; //reset collision events
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.tag == "Player" && host == null) //if released by player
+        {
+            collided = false; //reset collision events
+        }
     }
 }
