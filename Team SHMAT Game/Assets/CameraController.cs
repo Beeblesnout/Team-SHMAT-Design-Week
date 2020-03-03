@@ -3,16 +3,66 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// TODO implement rotations
+// TODO implement constraints
+
+/// <summary>
+/// Camera rig controller with high functionality
+/// </summary>
 [ExecuteInEditMode]
-public class CameraController : SingletonBase<CameraController>
+public class CameraController : MonoBehaviour
 {
     // Public Variables
+    [Header("Main Values")]
+    [SerializeField]
+    public Vector3 position;
+    [SerializeField]
+    public Vector2 rotation;
+    [SerializeField]
+    public float zoomDistance;
+
+    // Constraints
+    [Header("Constraints")]
+    [SerializeField]
+    public bool lockPosX;
+    [SerializeField]
+    public bool lockPosY;
+    [SerializeField]
+    public bool lockPosZ;
+    [SerializeField]
+    public bool lockRotX;
+    [SerializeField]
+    public bool lockRotY;
+
+    // Anchors
+    [Header("Ball Anchor")]
+    [Header("Anchors")]
+    [Space]
+    [SerializeField]
     public Transform ballAnchor;
+    [SerializeField]
     public float ballAnchorWeight;
+    [SerializeField]
+    [Range(0,1)]
+    public float ballAnchorOpacity;
+    
+    [Header("Player 1 Anchor")]
+    [SerializeField]
     public Transform player1Anchor;
+    [SerializeField]
     public float player1AnchorWeight;
+    [SerializeField]
+    [Range(0,1)]
+    public float player1AnchorOpacity;
+    
+    [Header("Player 2 Anchor")]
+    [SerializeField]
     public Transform player2Anchor;
+    [SerializeField]
     public float player2AnchorWeight;
+    [SerializeField]
+    [Range(0,1)]
+    public float player2AnchorOpacity;
 
     // Private Variables
     private Transform cameraPivot;
@@ -20,7 +70,7 @@ public class CameraController : SingletonBase<CameraController>
 
     // ----Start Methods-------------------------------------------------------------------
 
-    public override void Awake()
+    void Awake()
     {
         cameraPivot = transform.GetChild(0);
         camera = cameraPivot.GetComponentInChildren<Camera>();
@@ -35,10 +85,24 @@ public class CameraController : SingletonBase<CameraController>
 
     void Update()
     {
-        
+        transform.position = CalcAnchorPoint();
     }
 
     // ----Helper Methods------------------------------------------------------------------
+
+    public Vector3 CalcAnchorPoint()
+    {
+        Vector3 anchorPoint = new Vector3();
+        float d = ballAnchorWeight * ballAnchorOpacity
+             + player1AnchorWeight * player1AnchorOpacity
+             + player2AnchorWeight * player2AnchorOpacity;
+
+        anchorPoint += ballAnchor.position * (ballAnchorWeight / d) * ballAnchorOpacity;
+        anchorPoint += player1Anchor.position * (player1AnchorWeight / d) * player1AnchorOpacity;
+        anchorPoint += player2Anchor.position * (player2AnchorWeight / d) * player2AnchorOpacity;
+        
+        return anchorPoint;
+    }
 
     /// <summary>
     /// Rotates the camera pivot, aligned to the world up axis.
