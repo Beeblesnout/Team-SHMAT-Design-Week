@@ -36,7 +36,7 @@ public class P1Movement : PlayerMovement
             moveDirection.x += 1;
         }
 
-        if (Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             if (!isCarryingBall)
             {

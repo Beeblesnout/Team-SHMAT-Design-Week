@@ -36,7 +36,7 @@ public class P2Movement : PlayerMovement
             moveDirection.x += 1;
         }
 
-        if (Input.GetKeyDown(KeyCode.Keypad1))
+        if (Input.GetKeyDown(KeyCode.LeftAlt))
         {
             if (!isCarryingBall)
             {
