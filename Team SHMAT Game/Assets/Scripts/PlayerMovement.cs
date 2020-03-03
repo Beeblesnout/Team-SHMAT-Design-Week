@@ -14,6 +14,7 @@ public abstract class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
 
     private Vector3 chargeDirection;
+    Coroutine lastRoutine = null; //used to keep track of which coroutine to stop 
     private bool isCharging = false;
     [SerializeField]
     private float chargeTime = 0.25f;
@@ -112,10 +113,10 @@ public abstract class PlayerMovement : MonoBehaviour
             chargeDirection = lookDirection; //set to charge the way player is facing
         }
 
-        StartCoroutine(TimeChargeDuration());
+        lastRoutine = StartCoroutine(TimeChargeDuration());
     }
 
-    private IEnumerator TimeChargeDuration() //NOTE: could cause potential glitches. Remember to implement stopping of coroutine later
+    private IEnumerator TimeChargeDuration() 
     {
         yield return new WaitForSeconds(chargeTime); //character charges for the duration of chargeTime
         isCharging = false; 
@@ -160,6 +161,11 @@ public abstract class PlayerMovement : MonoBehaviour
                 BallAttach ballScript = other.gameObject.GetComponent<BallAttach>();
                 CheckBallIntercept(ballScript.host); 
                 //if collided with ball while charging, first get reference to the ball's carrier/host
+            }
+
+            if (lastRoutine != null)
+            {
+                StopCoroutine(lastRoutine); //prevents previously triggered coroutines from resetting charge duration
             }
 
             isCharging = false; //stops charge upon hitting anything 
