@@ -195,7 +195,7 @@ public abstract class PlayerMovement : MonoBehaviour
 
         PlayerMovement otherScript = otherPlayer.GetComponent<PlayerMovement>();
 
-        if (otherScript == null)
+        if (otherScript == null) 
         {
             return; 
         }
@@ -208,7 +208,7 @@ public abstract class PlayerMovement : MonoBehaviour
         BallAttach ballScript = otherScript.ballCarried.GetComponent<BallAttach>(); 
         if (ballScript != null) //get reference to the ball carried by other player
         {
-            ballScript.AttachTo(this.gameObject); 
+            ballScript.AttachTo(this.gameObject);
         }
 
         otherScript.ReleaseBall(); 

@@ -4,35 +4,78 @@ using UnityEngine;
 
 public class BallAttach : MonoBehaviour
 {
-    public GameObject host; //keeps track of which player is carrying the ball 
+    /// <summary>
+    /// Keeps track of which player is carrying the ball.
+    /// </summary>
+    public GameObject host;
+    /// <summary>
+    /// Last player that carried the ball.
+    /// </summary>
+    public GameObject lastHost;
 
-    public float aheadDistance = 3f; //determines how far ahead of player the ball is when attached to player
+    /// <summary>
+    /// Determines how far the ball checks for attachable players.
+    /// </summary>
+    public float attachRadius = 1f;
+    /// <summary>
+    /// Determines how far ahead of player the ball is when attached to player.
+    /// </summary>
+    public float aheadDistance = 3f;
+
     private bool collided = false;
-
+    private Transform root;
     private Rigidbody rb; 
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>(); 
+        root = transform.parent;
+        rb = root.GetComponent<Rigidbody>(); 
     }
 
-    // Update is called once per frame
-    void Update()
+    // Collider[] player;
+    void FixedUpdate()
     {
+        //prevents multiple collision events from occuring
+        //ball cannot be grabbed normally if already attached to a specific player 
+        // if (!collided && transform.parent)
+        // {
+        //     if (Physics.OverlapSphereNonAlloc(transform.position, 1, player, LayerMask.GetMask("Player")) != 0)
+        //     {
+        //         collided = true;
+        //         AttachTo(player[0].gameObject);
+        //     }
+        //     else
+        //     {
+        //         collided = false;
+        //     }
+        // }
 
+        // if (collided) return; //prevents multiple collision events from occuring 
+        // if (transform.parent != null) return; //ball cannot be grabbed normally if already attached to a specific player 
+
+        // if (other.gameObject.tag == "Player")
+        // {
+        //     AttachTo(other.gameObject);
+
+        //     collided = true;
+        // }
     }
 
+    /// <summary>
+    /// Attach to a new player.
+    /// </summary>
+    /// <param name="player">Player to attach to.</param>
     public void AttachTo(GameObject player)
     {
         rb.velocity = Vector3.zero; //stop ball from rolling 
         rb.isKinematic = true; 
-        //rb.constraints = RigidbodyConstraints.FreezePosition;
 
         Vector3 newPos = player.transform.position; 
         newPos += player.transform.forward * aheadDistance; //move ball to player's front
-        transform.position = newPos; 
-        transform.parent = player.transform;
+        root.position = newPos; 
+        root.parent = player.transform;
+        // Physics.IgnoreCollision();
 
         PlayerMovement playerScript = player.GetComponent<PlayerMovement>();
         if (playerScript != null)
@@ -45,41 +88,39 @@ public class BallAttach : MonoBehaviour
             Debug.Log("Player object does not have PlayerMovement script attached.");
         }
 
-        host = player; 
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        if (collided == true)
-        {
-            return; //prevents multiple collision events from occuring 
-        }
-
-        if (transform.parent != null) //ball cannot be grabbed normally if already attached to a specific player 
-        {
-            return; 
-        }
-
-        if (other.gameObject.tag == "Player")
-        {
-            AttachTo(other.gameObject);
-
-            collided = true;
-        }
+        host = player;
+        lastHost = host;
     }
 
     public void KickBallWithForce(Vector3 direction, float forceAmount)
     {
-        transform.SetParent(null); //ball is released from player 
-        host = null;
-        rb.isKinematic = false;
-        //rb.constraints &= ~RigidbodyConstraints.FreezePositionX;
-        //rb.constraints &= ~RigidbodyConstraints.FreezePositionZ; //unfreeze ball's horizontal movement 
+        root.SetParent(null); //ball is released from player 
+        host = null; 
 
+        rb.isKinematic = false;
         rb.AddForce(direction * forceAmount, ForceMode.Impulse);
     }
 
-    private void OnCollisionExit(Collision other)
+    private void OnTriggerEnter(Collider other)
+    {
+        if (collided) return; //prevents multiple collision events from occuring 
+        Debug.Log("hasnt collided");
+        if (host != null) return; //ball cannot be grabbed normally if already attached to a specific player 
+        Debug.Log("doesnt have a host");
+        if (other.gameObject.tag == "Player")
+        {
+            AttachTo(other.gameObject);
+            Debug.Log("attached!");
+
+            collided = true;
+        }
+        else
+        {
+            Debug.Log("not a player");
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player" && host == null) //if released by player
         {
