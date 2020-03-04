@@ -104,19 +104,12 @@ public class BallAttach : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (collided) return; //prevents multiple collision events from occuring 
-        Debug.Log("hasnt collided");
         if (host != null) return; //ball cannot be grabbed normally if already attached to a specific player 
-        Debug.Log("doesnt have a host");
         if (other.gameObject.tag == "Player")
         {
             AttachTo(other.gameObject);
-            Debug.Log("attached!");
 
             collided = true;
-        }
-        else
-        {
-            Debug.Log("not a player");
         }
     }
 
