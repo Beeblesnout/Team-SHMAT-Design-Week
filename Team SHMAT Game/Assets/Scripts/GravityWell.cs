@@ -29,12 +29,13 @@ public class GravityWell : MonoBehaviour
     {
         if (other.CompareTag("Ball"))
         {
+            float ballSpeed = other.attachedRigidbody.velocity.magnitude;
             Vector3 toBall = other.transform.position - transform.position;
             float distToDeadzone = toBall.magnitude - deadzoneRadius;
             if (distToDeadzone > 0)
             {
                 float f = distToDeadzone / (influenceRadius - deadzoneRadius);
-                float ballInfluence = distCurve.Evaluate(f) * strength;
+                float ballInfluence = distCurve.Evaluate(f) * strength * ballSpeed;
 
                 other.attachedRigidbody.AddForce(-toBall.normalized * ballInfluence, ForceMode.Acceleration);
             }
