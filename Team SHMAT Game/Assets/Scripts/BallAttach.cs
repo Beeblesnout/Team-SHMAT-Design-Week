@@ -68,6 +68,7 @@ public class BallAttach : MonoBehaviour
     /// <param name="player">Player to attach to.</param>
     public void AttachTo(GameObject player)
     {
+        // Debug.Log("attach");
         rb.velocity = Vector3.zero; //stop ball from rolling 
         rb.isKinematic = true; 
 
@@ -101,18 +102,6 @@ public class BallAttach : MonoBehaviour
         rb.AddForce(direction * forceAmount, ForceMode.Impulse);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (collided) return; //prevents multiple collision events from occuring 
-        if (host != null) return; //ball cannot be grabbed normally if already attached to a specific player 
-        if (other.gameObject.tag == "Player")
-        {
-            AttachTo(other.gameObject);
-
-            collided = true;
-        }
-    }
-
     public void HitBallWithForce(Vector3 direction, float forceAmount)
     {
         transform.SetParent(null); //ball is released from player 
@@ -122,6 +111,22 @@ public class BallAttach : MonoBehaviour
         //rb.constraints &= ~RigidbodyConstraints.FreezePositionZ; //unfreeze ball's horizontal movement 
 
         rb.AddForce(direction * forceAmount, ForceMode.Impulse);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            // Debug.Log("ping");
+            if (collided) return; //prevents multiple collision events from occuring 
+            if (host != null) return; //ball cannot be grabbed normally if already attached to a specific player 
+            if (other.gameObject.tag == "Player")
+            {
+                AttachTo(other.gameObject);
+
+                collided = true;
+            }
+        }
     }
 
     private void OnTriggerExit(Collider other)
