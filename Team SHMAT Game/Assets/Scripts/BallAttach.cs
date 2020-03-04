@@ -68,7 +68,7 @@ public class BallAttach : MonoBehaviour
         }
     }
 
-    public void KickBallWithForce(Vector3 direction, float forceAmount)
+    public void HitBallWithForce(Vector3 direction, float forceAmount)
     {
         transform.SetParent(null); //ball is released from player 
         host = null;
