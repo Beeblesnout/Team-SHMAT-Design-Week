@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7388040743865722631}
   - component: {fileID: 7388040743865722626}
   - component: {fileID: 7388040743865722627}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ball
   m_TagString: Ball
   m_Icon: {fileID: 0}
