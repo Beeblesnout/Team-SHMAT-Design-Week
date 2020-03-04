@@ -96,6 +96,8 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0}
   zoomDistance: 0
+  trackDuration: 2.5
+  trackSpeed: 2
   lockPosX: 0
   lockPosY: 1
   lockPosZ: 0

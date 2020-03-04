@@ -9,7 +9,7 @@ using UnityEngine;
 /// <summary>
 /// Camera rig controller with high functionality
 /// </summary>
-[ExecuteInEditMode]
+[ExecuteAlways]
 public class CameraController : MonoBehaviour
 {
     // Public Variables
@@ -92,22 +92,30 @@ public class CameraController : MonoBehaviour
     float trackProg;
     void Update()
     {
+        transform.position = Vector3.Lerp(transform.position, targetPos, .1f);
         // float 
-        var prevTargetPos = targetPos;
-        targetPos = CalcAnchorPoint();
-        if (targetPos != prevTargetPos)
-        {
-            changeTime = Time.time;
-        }
-        
-        if (Time.time - changeTime < trackDuration)
-        {
-            trackProg = Time.time - changeTime / trackDuration;
-            if (trackProg < 1)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, targetPos, trackSpeed);
-            }
-        }
+        //var prevTargetPos = targetPos;
+        //targetPos = CalcAnchorPoint();
+        //if (targetPos != prevTargetPos)
+        //{
+        //    changeTime = Time.time;
+        //}
+
+        ////Debug.Log(Time.time - changeTime);
+        //if (Time.time - changeTime < trackDuration)
+        //{
+        //    Debug.Log("moving");
+        //    trackProg = Time.time - changeTime / trackDuration;
+        //    if (trackProg < 1)
+        //    {
+        //        //Debug.Log(targetPos);
+        //        transform.position = Vector3.MoveTowards(transform.position, targetPos, trackSpeed);
+        //    }
+        //}
+        //else
+        //{
+        //    Debug.Log("not moving");
+        //}
     }
 
     // ----Helper Methods------------------------------------------------------------------
