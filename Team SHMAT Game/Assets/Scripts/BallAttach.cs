@@ -153,7 +153,7 @@ public class BallAttach : MonoBehaviour
 
     IEnumerator DelayResetCollision()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
         collided = false; //reset collision events
     }
 }

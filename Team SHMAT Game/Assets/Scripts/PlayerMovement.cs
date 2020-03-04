@@ -22,6 +22,8 @@ public abstract class PlayerMovement : MonoBehaviour
     public Material chargeColor; //use to indicate whether character is charging
     private MeshRenderer renderer;
 
+    public int playerNum; //used to award score to the correct player; set as 1 or 2 on inspector 
+
     // Start is called before the first frame update
     protected virtual void Start()
     {

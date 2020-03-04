@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class BouncyBumper : MonoBehaviour
 {
+    GameManager manager;
     private float bumperForce = 7f; 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        manager = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -32,6 +33,13 @@ public class BouncyBumper : MonoBehaviour
             mag += bumperForce; 
 
             other.rigidbody.velocity = dir * mag;
+
+            //award points to the player who shot the ball
+            BallAttach ballScript = other.transform.GetChild(0).GetComponent<BallAttach>();
+            GameObject playerAwarded = ballScript.lastHost; //find the ball's last host 
+            PlayerMovement playerScript = playerAwarded.GetComponent<PlayerMovement>();
+            int playerNum = playerScript.playerNum; //access the host's number
+            manager.AwardPointsToPlayer(1, playerNum); //award one point to player for each bumper hit 
         }
     }
 }
