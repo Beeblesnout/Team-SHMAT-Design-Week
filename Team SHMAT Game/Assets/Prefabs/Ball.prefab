@@ -60,7 +60,7 @@ MonoBehaviour:
   host: {fileID: 0}
   lastHost: {fileID: 0}
   attachRadius: 1
-  aheadDistance: 1
+  aheadDistance: 1.5
 --- !u!1 &7388040743865722648
 GameObject:
   m_ObjectHideFlags: 0

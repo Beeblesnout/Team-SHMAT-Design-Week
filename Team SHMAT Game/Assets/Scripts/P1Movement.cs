@@ -38,13 +38,9 @@ public class P1Movement : PlayerMovement
 
         if (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.J))
         {
-            if (!isCarryingBall)
+            if (isCarryingBall)
             {
-                Charge(); //charge when not carrying a ball
-            }
-            else
-            {
-                ShootBall(); //cannot charge when carrying ball - shoots ball instead
+                ShootBall();
             }
         }
     }

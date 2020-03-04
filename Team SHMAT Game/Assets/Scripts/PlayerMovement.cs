@@ -13,14 +13,6 @@ public abstract class PlayerMovement : MonoBehaviour
     //private float gravity = -9.8f;
     private Rigidbody rb;
 
-    private Vector3 chargeDirection;
-    Coroutine lastRoutine = null; //used to keep track of which coroutine to stop 
-    private bool isCharging = false;
-    [SerializeField]
-    private float chargeTime = 0.25f;
-    [SerializeField]
-    private float chargeSpeed = 40.0f;
-
     protected bool isCarryingBall = false;
     private GameObject ballCarried;
     [SerializeField]
@@ -44,7 +36,6 @@ public abstract class PlayerMovement : MonoBehaviour
     {
         GetInput(); 
         Move();
-        HandleMat(); 
     }
 
     private void Move()
@@ -54,12 +45,6 @@ public abstract class PlayerMovement : MonoBehaviour
             lookDirection = moveDirection; 
             Quaternion _rotation = Quaternion.LookRotation(lookDirection, Vector3.up);
             transform.rotation = _rotation; //turn player object to direction of movement 
-        }
-
-        if (isCharging)
-        {
-            rb.velocity = chargeDirection.normalized * chargeSpeed; //charge forward at higher speed 
-            return; 
         }
 
         rb.velocity = moveDirection.normalized * speed; //move normally 
@@ -81,45 +66,9 @@ public abstract class PlayerMovement : MonoBehaviour
         Gizmos.DrawRay(transform.position, transform.forward);
     }
 
-    private void HandleMat()
-    {
-        if (!isCharging)
-        {
-            renderer.material = defaultColor;  
-        }
-        else
-        {
-            renderer.material = chargeColor; //turn orange while charging  
-        }
-    }
-
     protected virtual void GetInput()
     {
         //left empty for child classes to override
-    }
-
-    protected void Charge()
-    {
-        if (isCharging) //only triggers effect if player is not already charging 
-        {
-            return; 
-        }
-
-        isCharging = true;
-        chargeDirection = moveDirection; //set charge direction so player cannot change it during charge 
-
-        if (chargeDirection == Vector3.zero) //if the player does not currently have move inputs 
-        {
-            chargeDirection = lookDirection; //set to charge the way player is facing
-        }
-
-        lastRoutine = StartCoroutine(TimeChargeDuration());
-    }
-
-    private IEnumerator TimeChargeDuration() 
-    {
-        yield return new WaitForSeconds(chargeTime); //character charges for the duration of chargeTime
-        isCharging = false; 
     }
 
     public void SetBall(GameObject ball) //records the ball GameObject this player is carrying 
@@ -147,30 +96,20 @@ public abstract class PlayerMovement : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision other)
-    {
-        if (isCharging)
+    { 
+        if (other.gameObject.tag == "Player")   
         {
-            if (other.gameObject.tag == "Player")
-            {
-                CheckBallIntercept(other.gameObject); 
-                //interception only occurs when the other player is charging
-            }
-
-            if(other.gameObject.tag == "Ball")
-            {
-                BallAttach ballScript = other.gameObject.GetComponent<BallAttach>();
-                CheckBallIntercept(ballScript.host); 
-                //if collided with ball while charging, first get reference to the ball's carrier/host
-            }
-
-            if (lastRoutine != null)
-            {
-                StopCoroutine(lastRoutine); //prevents previously triggered coroutines from resetting charge duration
-            }
-
-            isCharging = false; //stops charge upon hitting anything 
-            rb.velocity = new Vector3(0, 0, 0);
+            CheckBallIntercept(other.gameObject);
+            //interception only occurs when the other player is charging
         }
+
+        //if(other.gameObject.tag == "Ball")
+        //{
+        //    BallAttach ballScript = other.transform.GetChild(0).GetComponent<BallAttach>();
+        //    CheckBallIntercept(ballScript.host);
+        //    //if (ballScript.host == null) return; 
+        //    //if collided with ball while charging, first get reference to the ball's carrier/host
+        //}
 
         if (isCarryingBall) //ignore collision with ball while carrying it
         {
@@ -178,6 +117,15 @@ public abstract class PlayerMovement : MonoBehaviour
             {
                 Physics.IgnoreCollision(other.collider, GetComponent<Collider>());
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Ball"))
+        {
+            BallAttach ballScript = other.transform.GetComponent<BallAttach>();
+            CheckBallIntercept(ballScript.host);
         }
     }
 
@@ -197,13 +145,17 @@ public abstract class PlayerMovement : MonoBehaviour
 
         if (otherScript == null) 
         {
-            return; 
+            return;
         }
+
+        //in this case, we are sure its the other player
 
         if (otherScript.ballCarried == null) //does not intercept if the other player is not carrying a ball 
         {
             return; 
         }
+
+        //they have the ball
 
         BallAttach ballScript = otherScript.ballCarried.GetComponent<BallAttach>(); 
         if (ballScript != null) //get reference to the ball carried by other player

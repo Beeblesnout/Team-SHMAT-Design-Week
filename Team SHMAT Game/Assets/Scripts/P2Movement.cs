@@ -38,13 +38,9 @@ public class P2Movement : PlayerMovement
 
         if (Input.GetKeyDown(KeyCode.Slash) || Input.GetKeyDown(KeyCode.Keypad1))
         {
-            if (!isCarryingBall)
+            if (isCarryingBall)
             {
-                Charge(); //charge when not carrying a ball
-            }
-            else
-            {
-                ShootBall(); //cannot charge when carrying ball - shoots ball instead
+                ShootBall();
             }
         }
     }

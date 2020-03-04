@@ -23,6 +23,7 @@ public class BallAttach : MonoBehaviour
     public float aheadDistance = 3f;
 
     private bool collided = false;
+    [SerializeField]
     private Transform root;
     private Rigidbody rb; 
 
@@ -95,7 +96,7 @@ public class BallAttach : MonoBehaviour
 
     public void KickBallWithForce(Vector3 direction, float forceAmount)
     {
-        root.SetParent(null); //ball is released from player 
+        root.parent = null; //ball is released from player 
         host = null; 
 
         rb.isKinematic = false;
@@ -104,7 +105,7 @@ public class BallAttach : MonoBehaviour
 
     public void HitBallWithForce(Vector3 direction, float forceAmount)
     {
-        transform.SetParent(null); //ball is released from player 
+        root.parent = null; //ball is released from player 
         host = null;
         rb.isKinematic = false;
         //rb.constraints &= ~RigidbodyConstraints.FreezePositionX;
@@ -133,7 +134,14 @@ public class BallAttach : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && host == null) //if released by player
         {
-            collided = false; //reset collision events
+            StopAllCoroutines();
+            StartCoroutine(DelayResetCollision()); 
         }
+    }
+
+    IEnumerator DelayResetCollision()
+    {
+        yield return new WaitForSeconds(0.5f);
+        collided = false; //reset collision events
     }
 }
