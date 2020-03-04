@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ball
+  - Boundary
   layers:
   - Default
   - TransparentFX
@@ -13,8 +15,11 @@ TagManager:
   - UI
   - 
   - 
+  - PlayerGrab
   - 
   - 
+  - Ball
+  - Boundary
   - 
   - 
   - 
