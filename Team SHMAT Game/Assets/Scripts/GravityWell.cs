@@ -12,23 +12,31 @@ public class GravityWell : MonoBehaviour
     public Mesh ringMesh;
     public int gizmoCurveLineCount = 20;
 
+    private SphereCollider trigger;
+
     void Start()
     {
-        
+        trigger = GetComponent<SphereCollider>();
     }
 
-    float ballInfluence;
-    Collider[] cols;
-    void FixedUpdate()
+    [ExecuteAlways]
+    void Update()
     {
-        if (Physics.OverlapSphereNonAlloc(transform.position, influenceRadius, cols, LayerMask.GetMask("Ball")) > 0)
+        trigger.radius = influenceRadius;
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Ball"))
         {
-            Debug.Log("aa");
-            Vector3 toBall = cols[0].transform.position - transform.position;
+            Vector3 toBall = other.transform.position - transform.position;
             float distToDeadzone = toBall.magnitude - deadzoneRadius;
-            if (distToDeadzone < influenceRadius)
+            if (distToDeadzone > 0)
             {
-                Debug.Log("in range");
+                float f = distToDeadzone / (influenceRadius - deadzoneRadius);
+                float ballInfluence = distCurve.Evaluate(f) * strength;
+
+                other.attachedRigidbody.AddForce(-toBall.normalized * ballInfluence, ForceMode.Acceleration);
             }
         }
     }
