@@ -113,6 +113,17 @@ public class BallAttach : MonoBehaviour
         }
     }
 
+    public void HitBallWithForce(Vector3 direction, float forceAmount)
+    {
+        transform.SetParent(null); //ball is released from player 
+        host = null;
+        rb.isKinematic = false;
+        //rb.constraints &= ~RigidbodyConstraints.FreezePositionX;
+        //rb.constraints &= ~RigidbodyConstraints.FreezePositionZ; //unfreeze ball's horizontal movement 
+
+        rb.AddForce(direction * forceAmount, ForceMode.Impulse);
+    }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player" && host == null) //if released by player

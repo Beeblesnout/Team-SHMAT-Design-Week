@@ -23,6 +23,7 @@ public abstract class PlayerMovement : MonoBehaviour
 
     protected bool isCarryingBall = false;
     private GameObject ballCarried;
+    [SerializeField]
     private float kickForce = 30f; 
 
     public Material defaultColor;
@@ -35,7 +36,7 @@ public abstract class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         renderer = GetComponent<MeshRenderer>();
 
-        lookDirection = transform.forward; 
+        lookDirection = transform.forward;
     }
 
     // Update is called once per frame
@@ -43,7 +44,6 @@ public abstract class PlayerMovement : MonoBehaviour
     {
         GetInput(); 
         Move();
-
         HandleMat(); 
     }
 
@@ -78,7 +78,7 @@ public abstract class PlayerMovement : MonoBehaviour
     public void OnDrawGizmos() //marks which way player object is facing before models are imported
     {
         Gizmos.color = Color.cyan; 
-        Gizmos.DrawRay(transform.position, transform.forward); 
+        Gizmos.DrawRay(transform.position, transform.forward);
     }
 
     private void HandleMat()
@@ -132,7 +132,7 @@ public abstract class PlayerMovement : MonoBehaviour
         BallAttach ballScript = ballCarried.GetComponent<BallAttach>(); 
         if(ballScript != null)
         {
-            ballScript.KickBallWithForce(transform.forward, kickForce);
+            ballScript.HitBallWithForce(transform.forward, kickForce);
         }
         else
         {
