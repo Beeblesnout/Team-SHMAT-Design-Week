@@ -20,6 +20,10 @@ public class CameraController : MonoBehaviour
     public Vector2 rotation;
     [SerializeField]
     public float zoomDistance;
+    [SerializeField]
+    public float trackDuration;
+    [SerializeField]
+    public float trackSpeed;
 
     // Constraints
     [Header("Constraints")]
@@ -84,19 +88,26 @@ public class CameraController : MonoBehaviour
 
     // ----Runtime Methods-----------------------------------------------------------------
 
+    float changeTime;
+    float trackProg;
     void Update()
     {
-        float changeTime;
         // float 
         var prevTargetPos = targetPos;
         targetPos = CalcAnchorPoint();
         if (targetPos != prevTargetPos)
         {
             changeTime = Time.time;
-            
         }
-
-        transform.position = Vector3.Lerp(transform.position, targetPos, .1f);
+        
+        if (Time.time - changeTime < trackDuration)
+        {
+            trackProg = Time.time - changeTime / trackDuration;
+            if (trackProg < 1)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, targetPos, trackSpeed);
+            }
+        }
     }
 
     // ----Helper Methods------------------------------------------------------------------

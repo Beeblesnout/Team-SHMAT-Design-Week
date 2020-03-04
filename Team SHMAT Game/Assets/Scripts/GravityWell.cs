@@ -19,7 +19,7 @@ public class GravityWell : MonoBehaviour
         trigger = GetComponent<SphereCollider>();
     }
 
-    [ExecuteAlways]
+    [ExecuteInEditMode]
     void Update()
     {
         trigger.radius = influenceRadius;

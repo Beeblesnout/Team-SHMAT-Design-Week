@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8122187787802953739}
   - component: {fileID: 8122187787802953736}
   - component: {fileID: 8122187787802953737}
-  - component: {fileID: 8122187787802953782}
+  - component: {fileID: 6588463834924187834}
   - component: {fileID: 8122187787802953741}
   m_Layer: 0
   m_Name: Bumper
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8122187787802953783}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.37, y: 0.85, z: -11.27}
+  m_LocalPosition: {x: 0, y: 0.6, z: 0}
   m_LocalScale: {x: 3, y: 0.6, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,8 +81,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &8122187787802953782
-CapsuleCollider:
+--- !u!64 &6588463834924187834
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -91,10 +91,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &8122187787802953741
 MonoBehaviour:
   m_ObjectHideFlags: 0
