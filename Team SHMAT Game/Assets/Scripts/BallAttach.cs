@@ -25,7 +25,10 @@ public class BallAttach : MonoBehaviour
     private bool collided = false;
     [SerializeField]
     private Transform root;
-    private Rigidbody rb; 
+    private Rigidbody rb;
+
+    private float minVel = 25;
+    private float maxVel = 45;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +40,15 @@ public class BallAttach : MonoBehaviour
     // Collider[] player;
     void FixedUpdate()
     {
+        float mag = rb.velocity.magnitude;
+        if (mag < minVel || mag > maxVel) //if ball's velocity exceeds limits 
+        {
+            Vector3 dir = rb.velocity.normalized;
+            mag = Mathf.Clamp(mag, minVel, maxVel);
+
+            rb.velocity = dir * mag; 
+        }
+
         //prevents multiple collision events from occuring
         //ball cannot be grabbed normally if already attached to a specific player 
         // if (!collided && transform.parent)
