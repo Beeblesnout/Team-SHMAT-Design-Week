@@ -53,7 +53,7 @@ public class BouncyBumper : MonoBehaviour
     private int DetermineScore() //decided how many points to give out depending on combo count 
     {
         int combo = manager.comboCount;
-        Debug.Log(combo);
+        //Debug.Log(combo + "COMBO!");
         if (combo < 5) 
         {
             audioManagerScript.PlaySound("Bumper1");

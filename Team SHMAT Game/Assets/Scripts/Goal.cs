@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class Goal : MonoBehaviour
 {
-    GameManager manager; 
+    GameManager manager;
+    private AudioManager audioManagerScript;
     public bool player2;
 
     private int goalPoints = 30; //amount of points awarded for scoring 
 
     private void Start()
     {
-        manager = FindObjectOfType<GameManager>(); 
+        manager = FindObjectOfType<GameManager>();
+        audioManagerScript = FindObjectOfType<AudioManager>();
     }
 
     void OnCollisionEnter(Collision other)
@@ -20,12 +22,15 @@ public class Goal : MonoBehaviour
         {
             if (player2) //ball enters player2's goal 
             {
-                manager.AwardPointsToPlayer(goalPoints, 1); //award 5 pts to Player1
+                manager.AwardPointsToPlayer(goalPoints, 1); //award 30 pts to Player1
             }
             else
             {
                 manager.AwardPointsToPlayer(goalPoints, 2);
             }
+
+            audioManagerScript.PlaySound("Bumper5");
+            manager.GoalPause(other.gameObject);
         }
     }
 }

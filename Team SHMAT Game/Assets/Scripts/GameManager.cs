@@ -10,6 +10,7 @@ public class GameManager : SingletonBase<GameManager>
 
     public Text p1ScoreText;
     public Text p2ScoreText;
+    public GameObject goalMessage; 
 
     public int comboCount = 0; //keeps track of how many times a ball has bounced in a roll
 
@@ -40,6 +41,23 @@ public class GameManager : SingletonBase<GameManager>
         {
             player2Points += points;
         }
+    }
+
+    public void GoalPause(GameObject targetBall)
+    {
+        goalMessage.SetActive(true);
+        Time.timeScale = 0f; //pauses the game when ball hits goal  
+        StartCoroutine(ResetBall(targetBall)); 
+    }
+
+    public IEnumerator ResetBall(GameObject targetBall)
+    {
+        yield return new WaitForSecondsRealtime(2f); 
+        //set camera position codes here 
+        BallReset resetScript = targetBall.GetComponent<BallReset>();
+        resetScript.ResetBallPos();
+        goalMessage.SetActive(false);
+        Time.timeScale = 1f; //resume game upon resetting ball position 
     }
 
     public void ResetCombo()
