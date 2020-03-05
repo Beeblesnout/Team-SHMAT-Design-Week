@@ -1,12 +1,192 @@
 fileFormatVersion: 2
 guid: 7148cedb16f3d114aa80348a9ef20dfc
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 2474956827968642951
+    second: give up-font_0
+  - first:
+      213: 2558455339242321637
+    second: give up-font_1
+  - first:
+      213: 5661900189913973946
+    second: give up-font_2
+  - first:
+      213: 2886455424133562923
+    second: give up-font_3
+  - first:
+      213: 2376649802449584875
+    second: give up-font_4
+  - first:
+      213: 1584299219023949658
+    second: give up-font_5
+  - first:
+      213: 4013852738273384620
+    second: give up-font_6
+  - first:
+      213: 6051245138161825577
+    second: give up-font_7
+  - first:
+      213: 6599419242959444791
+    second: give up-font_8
+  - first:
+      213: 1145497878558265795
+    second: give up-font_9
+  - first:
+      213: -4516936064996800579
+    second: give up-font_10
+  - first:
+      213: 7566137467904084677
+    second: give up-font_11
+  - first:
+      213: -854740149336758810
+    second: give up-font_12
+  - first:
+      213: 8718709493554373710
+    second: give up-font_13
+  - first:
+      213: -3366106065780554753
+    second: give up-font_14
+  - first:
+      213: -7094560948039146288
+    second: give up-font_15
+  - first:
+      213: -6603772350759955726
+    second: give up-font_16
+  - first:
+      213: 816515310294376831
+    second: give up-font_17
+  - first:
+      213: -4542444705833697854
+    second: give up-font_18
+  - first:
+      213: -566538754189099125
+    second: give up-font_19
+  - first:
+      213: 998928605858573805
+    second: give up-font_20
+  - first:
+      213: -2608146719025734395
+    second: give up-font_21
+  - first:
+      213: -3335392764658015529
+    second: give up-font_22
+  - first:
+      213: -8701058104642894998
+    second: give up-font_23
+  - first:
+      213: -8363287394550965842
+    second: give up-font_24
+  - first:
+      213: -8031541133449835740
+    second: give up-font_25
+  - first:
+      213: -3688115356264792982
+    second: give up-font_26
+  - first:
+      213: -4598329201717474649
+    second: give up-font_27
+  - first:
+      213: -3834322889496122106
+    second: give up-font_28
+  - first:
+      213: 608398927845329926
+    second: give up-font_29
+  - first:
+      213: -2200829680401478428
+    second: give up-font_30
+  - first:
+      213: -5635004238782446326
+    second: give up-font_31
+  - first:
+      213: 5949642370745931465
+    second: give up-font_32
+  - first:
+      213: -6951723832657136247
+    second: give up-font_33
+  - first:
+      213: 7982232592171552354
+    second: give up-font_34
+  - first:
+      213: -234513502656069435
+    second: give up-font_35
+  - first:
+      213: 8175987447542191546
+    second: give up-font_36
+  - first:
+      213: -6658767641586971994
+    second: give up-font_37
+  - first:
+      213: 2393362989219181701
+    second: give up-font_38
+  - first:
+      213: -3769362650962232125
+    second: give up-font_39
+  - first:
+      213: 8024993420893685521
+    second: give up-font_40
+  - first:
+      213: -4876314673686986385
+    second: give up-font_41
+  - first:
+      213: -459480671717151789
+    second: give up-font_42
+  - first:
+      213: -653914793533468342
+    second: give up-font_43
+  - first:
+      213: 1336906148900219693
+    second: give up-font_44
+  - first:
+      213: -3712058967428487170
+    second: give up-font_45
+  - first:
+      213: -6958999597273438459
+    second: give up-font_46
+  - first:
+      213: -8838454118768856985
+    second: give up-font_47
+  - first:
+      213: 445563662245986029
+    second: give up-font_48
+  - first:
+      213: -4775765991793010133
+    second: give up-font_49
+  - first:
+      213: 8649059118607542121
+    second: give up-font_50
+  - first:
+      213: 5949702163069216620
+    second: give up-font_51
+  - first:
+      213: -857243023493878522
+    second: give up-font_52
+  - first:
+      213: -7065506876024216180
+    second: give up-font_53
+  - first:
+      213: -1887256617285500127
+    second: give up-font_54
+  - first:
+      213: 4297675257134301965
+    second: give up-font_55
+  - first:
+      213: 8878990173496261611
+    second: give up-font_56
+  - first:
+      213: -8153923421919120807
+    second: give up-font_57
+  - first:
+      213: -5073320828672181445
+    second: give up-font_58
+  - first:
+      213: -196624621155435573
+    second: give up-font_59
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -34,13 +214,13 @@ TextureImporter:
     filterMode: -1
     aniso: -1
     mipBias: -100
-    wrapU: -1
-    wrapV: -1
+    wrapU: 1
+    wrapV: 1
     wrapW: -1
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,9 +229,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   maxTextureSizeSet: 0
@@ -60,7 +240,19 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -72,11 +264,1271 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: give up-font_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7260
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78f9f754f10d85220800000000000000
+      internalID: 2474956827968642951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_1
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 7260
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e67d356395718320800000000000000
+      internalID: 2558455339242321637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_2
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 7260
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab40a85893c139e40800000000000000
+      internalID: 5661900189913973946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_3
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 7260
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b220b774aefbe0820800000000000000
+      internalID: 2886455424133562923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_4
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 7260
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be2828e376e8bf020800000000000000
+      internalID: 2376649802449584875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6600
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5fe9d7eebf8cf510800000000000000
+      internalID: 1584299219023949658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_6
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 6600
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca893859cc114b730800000000000000
+      internalID: 4013852738273384620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_7
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 6600
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 927f1fc64675af350800000000000000
+      internalID: 6051245138161825577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_8
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 6600
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73b997416d8d59b50800000000000000
+      internalID: 6599419242959444791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_9
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 6600
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c1dd6e5040a5ef00800000000000000
+      internalID: 1145497878558265795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5940
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db707b4a49e9051c0800000000000000
+      internalID: -4516936064996800579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_11
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 5940
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ca4230a0f1500960800000000000000
+      internalID: 7566137467904084677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_12
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 5940
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e5a48fdc5a5324f0800000000000000
+      internalID: -854740149336758810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_13
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 5940
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e44622737141ff870800000000000000
+      internalID: 8718709493554373710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_14
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 5940
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff3ccd81e503941d0800000000000000
+      internalID: -3366106065780554753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5280
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d4a4c6086e0b8d90800000000000000
+      internalID: -7094560948039146288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_16
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 5280
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f218670900ba54a0800000000000000
+      internalID: -6603772350759955726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_17
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 5280
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f71a3cf3958d45b00800000000000000
+      internalID: 816515310294376831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_18
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 5280
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cdbde06b9ef5f0c0800000000000000
+      internalID: -4542444705833697854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_19
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 5280
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8ff01531004328f0800000000000000
+      internalID: -566538754189099125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4620
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ded2d244648ecdd00800000000000000
+      internalID: 998928605858573805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_21
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 4620
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50dde5aa0600ecbd0800000000000000
+      internalID: -2608146719025734395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_22
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 4620
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d2a624c3fd46b1d0800000000000000
+      internalID: -3335392764658015529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_23
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 4620
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a630ab601c1af3780800000000000000
+      internalID: -8701058104642894998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_24
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 4620
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea9994ddc62afeb80800000000000000
+      internalID: -8363287394550965842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3960
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42bc8cd54eb3a8090800000000000000
+      internalID: -8031541133449835740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_26
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 3960
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6c7c2bbf9e21dcc0800000000000000
+      internalID: -3688115356264792982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_27
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 3960
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aa035b34f37f20c0800000000000000
+      internalID: -4598329201717474649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_28
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 3960
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60d2f69a5afb9cac0800000000000000
+      internalID: -3834322889496122106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_29
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 3960
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60c03f7f997717800800000000000000
+      internalID: 608398927845329926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3300
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ec8880f0151571e0800000000000000
+      internalID: -2200829680401478428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_31
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 3300
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a054d8710817cc1b0800000000000000
+      internalID: -5635004238782446326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_32
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 3300
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c69ce0b630619250800000000000000
+      internalID: 5949642370745931465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_33
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 3300
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 985bad98104868f90800000000000000
+      internalID: -6951723832657136247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_34
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 3300
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26e4eea304696ce60800000000000000
+      internalID: 7982232592171552354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2640
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c0072b3637debcf0800000000000000
+      internalID: -234513502656069435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_36
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 2640
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab51ecae341f67170800000000000000
+      internalID: 8175987447542191546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_37
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 2640
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aac7511c1e4793a0800000000000000
+      internalID: -6658767641586971994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_38
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 2640
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 584f9f645fee63120800000000000000
+      internalID: 2393362989219181701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_39
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 2640
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cc75cfc3a880bbc0800000000000000
+      internalID: -3769362650962232125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1980
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11707318ff08e5f60800000000000000
+      internalID: 8024993420893685521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_41
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 1980
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f61ccddd3a9d35cb0800000000000000
+      internalID: -4876314673686986385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_42
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 1980
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3db242573c89f99f0800000000000000
+      internalID: -459480671717151789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_43
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 1980
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a41901ab5f3dce6f0800000000000000
+      internalID: -653914793533468342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_44
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 1980
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2bab372f05ad8210800000000000000
+      internalID: 1336906148900219693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1320
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef72f15590e1c7cc0800000000000000
+      internalID: -3712058967428487170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_46
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 1320
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5072e649cbaac6f90800000000000000
+      internalID: -6958999597273438459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_47
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 1320
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 760b13f9ec0875580800000000000000
+      internalID: -8838454118768856985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_48
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 1320
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dee7ef44ac5fe2600800000000000000
+      internalID: 445563662245986029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_49
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 1320
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2a59c0322219bdb0800000000000000
+      internalID: -4775765991793010133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 660
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 967a4f59171a70870800000000000000
+      internalID: 8649059118607542121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_51
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 660
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c672d1d2896919250800000000000000
+      internalID: 5949702163069216620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_52
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 660
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60d277213067a14f0800000000000000
+      internalID: -857243023493878522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_53
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 660
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c852f705ee642fd90800000000000000
+      internalID: -7065506876024216180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_54
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 660
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12341be0b1e1fc5e0800000000000000
+      internalID: -1887256617285500127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_55
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d03c97550e864ab30800000000000000
+      internalID: 4297675257134301965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_56
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 0
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bebbd671582883b70800000000000000
+      internalID: 8878990173496261611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_57
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 0
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 952f5ce59d177de80800000000000000
+      internalID: -8153923421919120807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_58
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 0
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3b776ff591f799b0800000000000000
+      internalID: -5073320828672181445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: give up-font_59
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 0
+        width: 660
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcb3fe5e2f2754df0800000000000000
+      internalID: -196624621155435573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a1866fd2638811c48bdadf2c7d091cc1
     internalID: 0
     vertices: []
     indices: 
