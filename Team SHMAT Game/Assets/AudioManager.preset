@@ -1,0 +1,439 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AudioManager
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: 43cd83133b9faf74b944076fbcb8a288,
+      type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.size
+    value: 17
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[0].name
+    value: ButtonPress
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[0].clip
+    value: 
+    objectReference: {fileID: 8300000, guid: d9af84ac88f90f949bd54bae78375832, type: 3}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[0].volume
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[0].pitch
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[0].loop
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[0].source
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[1].name
+    value: ButtonSwitch
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[1].clip
+    value: 
+    objectReference: {fileID: 8300000, guid: 7fe8103df7899494bbcf3b0dfa4e0ef3, type: 3}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[1].volume
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[1].pitch
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[1].loop
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[1].source
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[2].name
+    value: BouncingWall
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[2].clip
+    value: 
+    objectReference: {fileID: 8300000, guid: efbab3644c8b48246a56578e2ced0299, type: 3}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[2].volume
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[2].pitch
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[2].loop
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[2].source
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[3].name
+    value: GrabBall
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[3].clip
+    value: 
+    objectReference: {fileID: 8300000, guid: 3570fa38567d1d4448c3a44d0b0b7ec1, type: 3}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[3].volume
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[3].pitch
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[3].loop
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[3].source
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[4].name
+    value: Bumper1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[4].clip
+    value: 
+    objectReference: {fileID: 8300000, guid: 5e56fa2bd7f66b74e899ab8df6f2dd4d, type: 3}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[4].volume
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[4].pitch
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[4].loop
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[4].source
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[5].name
+    value: Bumper2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[5].clip
+    value: 
+    objectReference: {fileID: 8300000, guid: 863a7421b26aa9245a0a75739b8f4452, type: 3}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[5].volume
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[5].pitch
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[5].loop
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[5].source
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[6].name
+    value: Bumper3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[6].clip
+    value: 
+    objectReference: {fileID: 8300000, guid: f02ff2da1845f9749bc261c77f6a3bb2, type: 3}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[6].volume
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[6].pitch
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[6].loop
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[6].source
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[7].name
+    value: Bumper4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[7].clip
+    value: 
+    objectReference: {fileID: 8300000, guid: de49a503aac2e9c4dbc1dea756fe02b0, type: 3}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[7].volume
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[7].pitch
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[7].loop
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[7].source
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[8].name
+    value: Bumper5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[8].clip
+    value: 
+    objectReference: {fileID: 8300000, guid: 36dc70b97f508b944add57298e5c1fdb, type: 3}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[8].volume
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[8].pitch
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[8].loop
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[8].source
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[9].name
+    value: WallHit
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[9].clip
+    value: 
+    objectReference: {fileID: 8300000, guid: 95e9212dd570a0146a9091d1d72212c3, type: 3}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[9].volume
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[9].pitch
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[9].loop
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[9].source
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[10].name
+    value: PadAction
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[10].clip
+    value: 
+    objectReference: {fileID: 8300000, guid: 0718e02ca284af54eabd3fd84f0f55eb, type: 3}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[10].volume
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[10].pitch
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[10].loop
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[10].source
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[11].name
+    value: PadHit
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[11].clip
+    value: 
+    objectReference: {fileID: 8300000, guid: 0d3633f521ec26641a923c8ab037ca83, type: 3}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[11].volume
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[11].pitch
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[11].loop
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[11].source
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[12].name
+    value: StartCountdown
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[12].clip
+    value: 
+    objectReference: {fileID: 8300000, guid: de68df0d4a84b554da4e656a4b2425e7, type: 3}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[12].volume
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[12].pitch
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[12].loop
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[12].source
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[13].name
+    value: Start
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[13].clip
+    value: 
+    objectReference: {fileID: 8300000, guid: 08818e2feefb1ab4080712dc68efd9da, type: 3}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[13].volume
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[13].pitch
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[13].loop
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[13].source
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[14].name
+    value: Steal
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[14].clip
+    value: 
+    objectReference: {fileID: 8300000, guid: 758b80768995ca24cb6dd8f6c9470b2a, type: 3}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[14].volume
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[14].pitch
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[14].loop
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[14].source
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[15].name
+    value: ShootBall
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[15].clip
+    value: 
+    objectReference: {fileID: 8300000, guid: 9ae592405f6d8bd45a19c59eb90d5685, type: 3}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[15].volume
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[15].pitch
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[15].loop
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[15].source
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[16].name
+    value: TimeOutCountdown
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[16].clip
+    value: 
+    objectReference: {fileID: 8300000, guid: e6fc8923f4a99d843aa83077d57e159d, type: 3}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[16].volume
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[16].pitch
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[16].loop
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: soundArray.Array.data[16].source
+    value: 
+    objectReference: {fileID: 0}

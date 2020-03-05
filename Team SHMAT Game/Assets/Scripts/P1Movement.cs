@@ -13,7 +13,7 @@ public class P1Movement : PlayerMovement
     // Update is called once per frame
     protected override void Update()
     {
-        base.Update(); 
+        base.Update();
     }
 
     protected override void GetInput()

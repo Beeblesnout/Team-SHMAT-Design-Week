@@ -53,7 +53,7 @@ public abstract class PlayerMovement : MonoBehaviour
         GetInput(); 
         Move();
 
-        HandleMat(); 
+        HandleMat();
     }
 
     private void Move()
@@ -232,7 +232,9 @@ public abstract class PlayerMovement : MonoBehaviour
         {
             return;
         }
+        Debug.Log(4); 
 
+        Debug.Log(otherScript.ballCarried);
         //in this case, we are sure its the other player
 
         if (otherScript.ballCarried == null) //does not intercept if the other player is not carrying a ball 
@@ -241,6 +243,7 @@ public abstract class PlayerMovement : MonoBehaviour
         }
 
         //they have the ball
+        //Debug.Log("stealing" + this.gameObject.name); 
 
         SetTrueStolen();
         otherScript.SetTrueStolen(); //set stolen variable to true for both players to prevent either from steal until OnCollisionExit
