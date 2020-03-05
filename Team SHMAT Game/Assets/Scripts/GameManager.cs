@@ -11,6 +11,8 @@ public class GameManager : SingletonBase<GameManager>
     public Text p1ScoreText;
     public Text p2ScoreText;
 
+    public int comboCount = 0; //keeps track of how many times a ball has bounced in a roll
+
     void Start()
     {
         
@@ -38,5 +40,10 @@ public class GameManager : SingletonBase<GameManager>
         {
             player2Points += points;
         }
+    }
+
+    public void ResetCombo()
+    {
+        comboCount = 0;
     }
 }

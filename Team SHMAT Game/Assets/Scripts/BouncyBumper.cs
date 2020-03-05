@@ -5,7 +5,8 @@ using UnityEngine;
 public class BouncyBumper : MonoBehaviour
 {
     GameManager manager;
-    private float bumperForce = 7f; 
+    private float bumperForce = 7f;
+    private int comboStageHits = 4; //how many bounces are required for combo to advance to the next point-awarding stage
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +40,34 @@ public class BouncyBumper : MonoBehaviour
             GameObject playerAwarded = ballScript.lastHost; //find the ball's last host 
             PlayerMovement playerScript = playerAwarded.GetComponent<PlayerMovement>();
             int playerNum = playerScript.playerNum; //access the host's number
-            manager.AwardPointsToPlayer(1, playerNum); //award one point to player for each bumper hit 
+            int points = DetermineScore();
+            manager.AwardPointsToPlayer(points, playerNum); //award points to player for each bumper hit 
         }
+    }
+
+    private int DetermineScore() //decided how many points to give out depending on combo count 
+    {
+        int combo = manager.comboCount; 
+        if(combo < comboStageHits) 
+        {
+            return 1; 
+        }
+
+        if (combo < comboStageHits * 2)
+        {
+            return 2;
+        }
+
+        if (combo < comboStageHits * 3)
+        {
+            return 3;
+        }
+
+        if (combo < comboStageHits * 4)
+        {
+            return 4;
+        }
+
+        return 5;
     }
 }

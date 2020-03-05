@@ -23,6 +23,7 @@ public class BallAttach : MonoBehaviour
     public float aheadDistance = 3f;
 
     private bool collided = false;
+    private GameManager manager; 
     [SerializeField]
     private Transform root;
     private Rigidbody rb;
@@ -33,6 +34,7 @@ public class BallAttach : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        manager = FindObjectOfType<GameManager>();
         root = transform.parent;
         rb = root.GetComponent<Rigidbody>(); 
     }
@@ -104,6 +106,7 @@ public class BallAttach : MonoBehaviour
 
         host = player;
         lastHost = host;
+        manager.ResetCombo(); //reset ball's combo count whenever it is picked up
     }
 
     public void KickBallWithForce(Vector3 direction, float forceAmount)
