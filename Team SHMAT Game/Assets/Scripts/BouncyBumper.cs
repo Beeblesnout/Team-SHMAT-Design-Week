@@ -12,6 +12,7 @@ public class BouncyBumper : MonoBehaviour
     public AnimationCurve bumpCurve;
     public float bumpDuration;
     public Vector3 bumpAmount;
+    private Vector3 startScale;
 
     private float bumperForce = 7f;
     //private int comboStageHits = 5; //how many bounces are required for combo to advance to the next point-awarding stage
@@ -22,6 +23,8 @@ public class BouncyBumper : MonoBehaviour
         manager = FindObjectOfType<GameManager>();
         audioManagerScript = FindObjectOfType<AudioManager>();
         particleEffect = GetComponentInChildren<ParticleSystem>();
+
+        startScale = transform.localScale;
     }
 
     // Update is called once per frame
@@ -59,8 +62,6 @@ public class BouncyBumper : MonoBehaviour
         }
     }
 
-    [ContextMenu("Play Effects")]
-    [ExecuteAlways]
     private void DoEffects()
     {
         StopAllCoroutines();
@@ -68,11 +69,9 @@ public class BouncyBumper : MonoBehaviour
         if (particleEffect) particleEffect.Emit(30);
     }
 
-    [ExecuteAlways]
     IEnumerator BumpAnim()
     {
         float startTime = Time.time;
-        Vector3 startScale = transform.localScale;
         float prog = 0;
         while (prog < 1)
         {
