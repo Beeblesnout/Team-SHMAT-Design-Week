@@ -18,11 +18,9 @@ public abstract class PlayerMovement : MonoBehaviour
     protected bool isCarryingBall = false;
     private GameObject ballCarried;
     [SerializeField]
-    private float kickForce = 30f; 
+    private float kickForce = 30f;
 
-    public Material defaultColor;
-    public Material chargeColor; //use to indicate whether character is charging
-    private MeshRenderer renderer;
+    private bool stolen = false; //prevent multiple steals triggered by one collision
 
     public int playerNum; //used to award score to the correct player; set as 1 or 2 on inspector 
 
@@ -32,7 +30,6 @@ public abstract class PlayerMovement : MonoBehaviour
         audioManagerScript = FindObjectOfType<AudioManager>();
 
         rb = GetComponent<Rigidbody>();
-        renderer = GetComponent<MeshRenderer>();
 
         lookDirection = transform.forward;
     }
@@ -102,6 +99,11 @@ public abstract class PlayerMovement : MonoBehaviour
         isCarryingBall = state; 
     }
 
+    public void SetTrueStolen()
+    {
+        stolen = true;
+    }
+
     private void OnCollisionEnter(Collision other)
     { 
         if (other.gameObject.tag == "Player")   
@@ -136,8 +138,18 @@ public abstract class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            stolen = false; //reset ability to steal once players are no longer colliding
+        }
+    }
+
     private void CheckBallIntercept(GameObject otherPlayer)
     {
+        if (stolen) return; //prevents multiple steals from occuring in one collision
+
         if (otherPlayer == this.gameObject)
         {
             return; //Prevents a glitch where a player intercepts the ball from himself
@@ -163,6 +175,9 @@ public abstract class PlayerMovement : MonoBehaviour
         }
 
         //they have the ball
+
+        SetTrueStolen();
+        otherScript.SetTrueStolen(); //set stolen variable to true for both players to prevent either from steal until OnCollisionExit
 
         BallAttach ballScript = otherScript.ballCarried.GetComponent<BallAttach>(); 
         if (ballScript != null) //get reference to the ball carried by other player
