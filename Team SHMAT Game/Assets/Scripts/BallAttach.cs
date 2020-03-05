@@ -134,6 +134,8 @@ public class BallAttach : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.name); 
+
         if (other.CompareTag("Player"))
         {
             // Debug.Log("ping");
@@ -150,6 +152,7 @@ public class BallAttach : MonoBehaviour
 
         if (other.CompareTag("Wall"))
         {
+            Debug.Log(other.name);
             audioManagerScript.PlaySound("BouncingWall"); 
         }
 

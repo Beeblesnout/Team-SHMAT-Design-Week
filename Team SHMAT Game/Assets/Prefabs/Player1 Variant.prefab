@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   kickForce: 30
-  playerNum: 0
+  playerNum: 1
   chargeTime: 0.25
   chargeSpeed: 40
   defaultColor: {fileID: 2100000, guid: bf3952ee2d6638d43ad9be5a4b7901e7, type: 2}
