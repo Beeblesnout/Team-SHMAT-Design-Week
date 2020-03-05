@@ -42,6 +42,10 @@ public class P2Movement : PlayerMovement
             {
                 ShootBall();
             }
+            else
+            {
+                Charge(); 
+            }
         }
     }
 }

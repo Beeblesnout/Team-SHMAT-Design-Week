@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  kickForce: 30
+  playerNum: 0
   chargeTime: 0.25
   chargeSpeed: 40
-  kickForce: 30
-  defaultColor: {fileID: 2100000, guid: 520f016fd1c40604089b4f55419241cd, type: 2}
-  chargeColor: {fileID: 2100000, guid: ddc7f5cc12b3e204a8a2ee1fac751571, type: 2}
+  defaultColor: {fileID: 0}
+  chargeColor: {fileID: 0}
 --- !u!1001 &8638161371793445697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28,7 +29,7 @@ PrefabInstance:
     - target: {fileID: 1669232031216509297, guid: 467783827dca4d047a6fd2b0294e40cf,
         type: 3}
       propertyPath: m_Name
-      value: Player2
+      value: Player2 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1669232031216509299, guid: 467783827dca4d047a6fd2b0294e40cf,
         type: 3}
@@ -69,6 +70,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669232031216509311, guid: 467783827dca4d047a6fd2b0294e40cf,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 467783827dca4d047a6fd2b0294e40cf, type: 3}
