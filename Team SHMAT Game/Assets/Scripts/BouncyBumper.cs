@@ -6,6 +6,12 @@ public class BouncyBumper : MonoBehaviour
 {
     private GameManager manager;
     private AudioManager audioManagerScript;
+    [SerializeField]
+    private ParticleSystem particleEffect;
+    public int particleCount = 30;
+    public AnimationCurve bumpCurve;
+    public float bumpDuration;
+    public Vector3 bumpAmount;
 
     private float bumperForce = 7f;
     //private int comboStageHits = 5; //how many bounces are required for combo to advance to the next point-awarding stage
@@ -15,6 +21,7 @@ public class BouncyBumper : MonoBehaviour
     {
         manager = FindObjectOfType<GameManager>();
         audioManagerScript = FindObjectOfType<AudioManager>();
+        particleEffect = GetComponentInChildren<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -47,7 +54,34 @@ public class BouncyBumper : MonoBehaviour
             manager.IncreaseCombo(1); 
             int points = DetermineScore();
             manager.AwardPointsToPlayer(points, playerNum); //award points to player for each bumper hit 
+
+            DoEffects();
         }
+    }
+
+    [ContextMenu("Play Effects")]
+    [ExecuteAlways]
+    private void DoEffects()
+    {
+        StopAllCoroutines();
+        StartCoroutine(BumpAnim());
+        if (particleEffect) particleEffect.Emit(30);
+    }
+
+    [ExecuteAlways]
+    IEnumerator BumpAnim()
+    {
+        float startTime = Time.time;
+        Vector3 startScale = transform.localScale;
+        float prog = 0;
+        while (prog < 1)
+        {
+            prog = (Time.time - startTime) / bumpDuration;
+            transform.localScale = Vector3.Scale(startScale, Vector3.one + (bumpCurve.Evaluate(prog) * bumpAmount));
+            transform.localScale.Set(transform.localScale.x, startScale.y, transform.localScale.z);
+            yield return new WaitForEndOfFrame();
+        }
+        transform.localScale = startScale;
     }
 
     private int DetermineScore() //decided how many points to give out depending on combo count 
