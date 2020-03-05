@@ -232,9 +232,7 @@ public abstract class PlayerMovement : MonoBehaviour
         {
             return;
         }
-        Debug.Log(4); 
 
-        Debug.Log(otherScript.ballCarried);
         //in this case, we are sure its the other player
 
         if (otherScript.ballCarried == null) //does not intercept if the other player is not carrying a ball 

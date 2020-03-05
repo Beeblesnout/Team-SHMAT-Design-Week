@@ -31,7 +31,7 @@ public class BallAttach : MonoBehaviour
     private Rigidbody rb;
 
     private float minVel = 25;
-    private float maxVel = 45;
+    private float maxVel = 40;
 
     // Start is called before the first frame update
     void Start()
