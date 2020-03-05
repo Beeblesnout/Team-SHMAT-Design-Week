@@ -39,39 +39,17 @@ public class CameraController : MonoBehaviour
     public bool lockRotY;
 
     // Anchors
-    [Header("Ball Anchor")]
     [Header("Anchors")]
     [Space]
-    [SerializeField]
-    public Transform ballAnchor;
-    [SerializeField]
-    public float ballAnchorWeight;
-    [SerializeField]
-    [Range(0,1)]
-    public float ballAnchorOpacity;
-    
-    [Header("Player 1 Anchor")]
-    [SerializeField]
-    public Transform player1Anchor;
-    [SerializeField]
-    public float player1AnchorWeight;
-    [SerializeField]
-    [Range(0,1)]
-    public float player1AnchorOpacity;
-    
-    [Header("Player 2 Anchor")]
-    [SerializeField]
-    public Transform player2Anchor;
-    [SerializeField]
-    public float player2AnchorWeight;
-    [SerializeField]
-    [Range(0,1)]
-    public float player2AnchorOpacity;
+    public Anchor ballAnchor;
+    public List<Anchor> anchors;
 
     // Private Variables
     private Transform cameraPivot;
     private new Camera camera;
     private Vector3 targetPos;
+    public Mesh gizmoRadiusMesh;
+    public Mesh gizmoWeightMesh;
 
     // ----Start Methods-------------------------------------------------------------------
 
@@ -118,18 +96,31 @@ public class CameraController : MonoBehaviour
         //}
     }
 
+    // ----Gizmos--------------------------------------------------------------------------
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        foreach(Anchor a in anchors)
+        {
+            if (!a.transform) return;
+            Gizmos.DrawWireMesh(gizmoRadiusMesh, a.transform.position, Quaternion.identity, Vector3.one * a.radius);
+            Gizmos.DrawMesh(gizmoWeightMesh, a.transform.position, Quaternion.identity, Vector3.one * a.weight);
+        }
+    }
+
     // ----Helper Methods------------------------------------------------------------------
 
     public Vector3 CalcAnchorPoint()
     {
         Vector3 anchorPoint = new Vector3();
-        float d = ballAnchorWeight * ballAnchorOpacity
-             + player1AnchorWeight * player1AnchorOpacity
-             + player2AnchorWeight * player2AnchorOpacity;
+        // float d = ballAnchorWeight * ballAnchorOpacity
+        //      + player1AnchorWeight * player1AnchorOpacity
+        //      + player2AnchorWeight * player2AnchorOpacity;
 
-        anchorPoint += ballAnchor.position * (ballAnchorWeight / d) * ballAnchorOpacity;
-        anchorPoint += player1Anchor.position * (player1AnchorWeight / d) * player1AnchorOpacity;
-        anchorPoint += player2Anchor.position * (player2AnchorWeight / d) * player2AnchorOpacity;
+        // anchorPoint += ballAnchor.position * (ballAnchorWeight / d) * ballAnchorOpacity;
+        // anchorPoint += player1Anchor.position * (player1AnchorWeight / d) * player1AnchorOpacity;
+        // anchorPoint += player2Anchor.position * (player2AnchorWeight / d) * player2AnchorOpacity;
         
         return anchorPoint;
     }
@@ -184,4 +175,13 @@ public class CameraController : MonoBehaviour
         // pivot camera normally
         PivotCamera(angles);
     }
+}
+
+[Serializable]
+public struct Anchor
+{
+    public Transform transform;
+    public float weight;
+    public float radius;
+    public float opacity;
 }

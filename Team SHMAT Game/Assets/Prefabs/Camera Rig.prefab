@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6438089408713420398
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1932987760433393429}
+  m_Layer: 0
+  m_Name: Camera Anchors
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1932987760433393429
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6438089408713420398}
+  m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7994111482198571961}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7994111480828793302
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,11 +103,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7994111482198571960}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.29855868, y: 0.5, z: 3.8260717}
+  m_LocalPosition: {x: -0.24183252, y: 0.405, z: 3.099118}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7994111482859556993}
   - {fileID: 7994111480828793303}
+  - {fileID: 1932987760433393429}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -103,15 +134,14 @@ MonoBehaviour:
   lockPosZ: 0
   lockRotX: 1
   lockRotY: 1
-  ballAnchor: {fileID: 0}
-  ballAnchorWeight: 2
-  ballAnchorOpacity: 1
-  player1Anchor: {fileID: 0}
-  player1AnchorWeight: 1
-  player1AnchorOpacity: 1
-  player2Anchor: {fileID: 0}
-  player2AnchorWeight: 1
-  player2AnchorOpacity: 1
+  ballAnchor:
+    transform: {fileID: 0}
+    weight: 0
+    radius: 0
+    opacity: 0
+  anchors: []
+  gizmoRadiusMesh: {fileID: 0}
+  gizmoWeightMesh: {fileID: 0}
 --- !u!1 &7994111482571578377
 GameObject:
   m_ObjectHideFlags: 0
