@@ -165,7 +165,6 @@ public abstract class PlayerMovement : MonoBehaviour
         if (other.gameObject.tag == "Player")   
         {
             CheckBallIntercept(other.gameObject);
-            //interception only occurs when the other player is charging
         }
 
         //if(other.gameObject.tag == "Ball")
@@ -182,6 +181,17 @@ public abstract class PlayerMovement : MonoBehaviour
             {
                 Physics.IgnoreCollision(other.collider, GetComponent<Collider>());
             }
+        }
+
+        if (isCharging)
+        {
+            if (lastRoutine != null)
+            {
+                StopCoroutine(lastRoutine); //prevents previously triggered coroutines from resetting charge duration
+            }
+
+            isCharging = false; //stops charge upon hitting anything 
+            rb.velocity = new Vector3(0, 0, 0);
         }
     }
 
