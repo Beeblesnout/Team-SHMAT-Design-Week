@@ -23,13 +23,22 @@ public class BallAttach : MonoBehaviour
     public float aheadDistance = 3f;
 
     private bool collided = false;
+    private GameManager manager;
+    private AudioManager audioManagerScript;
+
     [SerializeField]
     private Transform root;
-    private Rigidbody rb; 
+    private Rigidbody rb;
+
+    private float minVel = 25;
+    private float maxVel = 45;
 
     // Start is called before the first frame update
     void Start()
     {
+        manager = FindObjectOfType<GameManager>();
+        audioManagerScript = FindObjectOfType<AudioManager>();
+
         root = transform.parent;
         rb = root.GetComponent<Rigidbody>(); 
     }
@@ -37,6 +46,15 @@ public class BallAttach : MonoBehaviour
     // Collider[] player;
     void FixedUpdate()
     {
+        float mag = rb.velocity.magnitude;
+        if (mag < minVel || mag > maxVel) //if ball's velocity exceeds limits 
+        {
+            Vector3 dir = rb.velocity.normalized;
+            mag = Mathf.Clamp(mag, minVel, maxVel);
+
+            rb.velocity = dir * mag; 
+        }
+
         //prevents multiple collision events from occuring
         //ball cannot be grabbed normally if already attached to a specific player 
         // if (!collided && transform.parent)
@@ -69,7 +87,6 @@ public class BallAttach : MonoBehaviour
     /// <param name="player">Player to attach to.</param>
     public void AttachTo(GameObject player)
     {
-        // Debug.Log("attach");
         rb.velocity = Vector3.zero; //stop ball from rolling 
         rb.isKinematic = true; 
 
@@ -92,6 +109,7 @@ public class BallAttach : MonoBehaviour
 
         host = player;
         lastHost = host;
+        manager.ResetCombo(); //reset ball's combo count whenever it is picked up
     }
 
     public void KickBallWithForce(Vector3 direction, float forceAmount)
@@ -123,10 +141,21 @@ public class BallAttach : MonoBehaviour
             if (host != null) return; //ball cannot be grabbed normally if already attached to a specific player 
             if (other.gameObject.tag == "Player")
             {
+                audioManagerScript.PlaySound("GrabBall");
                 AttachTo(other.gameObject);
 
                 collided = true;
             }
+        }
+
+        if (other.CompareTag("Wall"))
+        {
+            audioManagerScript.PlaySound("BouncingWall"); 
+        }
+
+        if (other.CompareTag("Blocker"))
+        {
+            audioManagerScript.PlaySound("PadHit");
         }
     }
 
@@ -141,7 +170,7 @@ public class BallAttach : MonoBehaviour
 
     IEnumerator DelayResetCollision()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
         collided = false; //reset collision events
     }
 }
