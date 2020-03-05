@@ -23,7 +23,9 @@ public class BallAttach : MonoBehaviour
     public float aheadDistance = 3f;
 
     private bool collided = false;
-    private GameManager manager; 
+    private GameManager manager;
+    private AudioManager audioManagerScript;
+
     [SerializeField]
     private Transform root;
     private Rigidbody rb;
@@ -35,6 +37,8 @@ public class BallAttach : MonoBehaviour
     void Start()
     {
         manager = FindObjectOfType<GameManager>();
+        audioManagerScript = FindObjectOfType<AudioManager>();
+
         root = transform.parent;
         rb = root.GetComponent<Rigidbody>(); 
     }
@@ -83,7 +87,6 @@ public class BallAttach : MonoBehaviour
     /// <param name="player">Player to attach to.</param>
     public void AttachTo(GameObject player)
     {
-        // Debug.Log("attach");
         rb.velocity = Vector3.zero; //stop ball from rolling 
         rb.isKinematic = true; 
 
@@ -138,10 +141,16 @@ public class BallAttach : MonoBehaviour
             if (host != null) return; //ball cannot be grabbed normally if already attached to a specific player 
             if (other.gameObject.tag == "Player")
             {
+                audioManagerScript.PlaySound("GrabBall");
                 AttachTo(other.gameObject);
 
                 collided = true;
             }
+        }
+
+        if (other.CompareTag("Wall"))
+        {
+            audioManagerScript.PlaySound("BouncingWall"); 
         }
     }
 

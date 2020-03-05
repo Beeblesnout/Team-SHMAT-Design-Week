@@ -5,7 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ball
-  - Boundary
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -15,11 +15,6 @@ TagManager:
   - UI
   - 
   - 
-  - PlayerGrab
-  - 
-  - 
-  - Ball
-  - Boundary
   - 
   - 
   - 
@@ -41,7 +36,9 @@ TagManager:
   - 
   - 
   - 
-  - PostProcessing
+  - 
+  - 
+  - 
   m_SortingLayers:
   - name: Default
     uniqueID: 0

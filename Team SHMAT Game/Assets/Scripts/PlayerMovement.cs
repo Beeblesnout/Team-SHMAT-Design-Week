@@ -6,6 +6,8 @@ using UnityEngine;
 
 public abstract class PlayerMovement : MonoBehaviour
 {
+    private AudioManager audioManagerScript;
+
     [SerializeField]
     private float speed = 15.0f;
     protected Vector3 moveDirection;
@@ -27,6 +29,8 @@ public abstract class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
+        audioManagerScript = FindObjectOfType<AudioManager>();
+
         rb = GetComponent<Rigidbody>();
         renderer = GetComponent<MeshRenderer>();
 
@@ -84,6 +88,7 @@ public abstract class PlayerMovement : MonoBehaviour
         if(ballScript != null)
         {
             ballScript.HitBallWithForce(transform.forward, kickForce);
+            audioManagerScript.PlaySound("ShootBall");
         }
         else
         {
@@ -162,6 +167,7 @@ public abstract class PlayerMovement : MonoBehaviour
         BallAttach ballScript = otherScript.ballCarried.GetComponent<BallAttach>(); 
         if (ballScript != null) //get reference to the ball carried by other player
         {
+            audioManagerScript.PlaySound("Steal");
             ballScript.AttachTo(this.gameObject);
         }
 

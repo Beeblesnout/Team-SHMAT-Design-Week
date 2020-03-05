@@ -7,7 +7,7 @@ public class Goal : MonoBehaviour
     GameManager manager; 
     public bool player2;
 
-    private int goalPoints = 20; //amount of points awarded for scoring 
+    private int goalPoints = 30; //amount of points awarded for scoring 
 
     private void Start()
     {

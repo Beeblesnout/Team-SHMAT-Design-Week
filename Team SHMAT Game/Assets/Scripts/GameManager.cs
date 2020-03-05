@@ -46,4 +46,9 @@ public class GameManager : SingletonBase<GameManager>
     {
         comboCount = 0;
     }
+
+    public void IncreaseCombo(int amount)
+    {
+        comboCount += amount;
+    }
 }

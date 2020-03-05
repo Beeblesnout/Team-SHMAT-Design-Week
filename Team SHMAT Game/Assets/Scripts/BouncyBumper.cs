@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class BouncyBumper : MonoBehaviour
 {
-    GameManager manager;
+    private GameManager manager;
+    private AudioManager audioManagerScript;
+
     private float bumperForce = 7f;
-    private int comboStageHits = 4; //how many bounces are required for combo to advance to the next point-awarding stage
+    //private int comboStageHits = 5; //how many bounces are required for combo to advance to the next point-awarding stage
 
     // Start is called before the first frame update
     void Start()
     {
         manager = FindObjectOfType<GameManager>();
+        audioManagerScript = FindObjectOfType<AudioManager>();
     }
 
     // Update is called once per frame
@@ -40,6 +43,8 @@ public class BouncyBumper : MonoBehaviour
             GameObject playerAwarded = ballScript.lastHost; //find the ball's last host 
             PlayerMovement playerScript = playerAwarded.GetComponent<PlayerMovement>();
             int playerNum = playerScript.playerNum; //access the host's number
+
+            manager.IncreaseCombo(1); 
             int points = DetermineScore();
             manager.AwardPointsToPlayer(points, playerNum); //award points to player for each bumper hit 
         }
@@ -47,27 +52,34 @@ public class BouncyBumper : MonoBehaviour
 
     private int DetermineScore() //decided how many points to give out depending on combo count 
     {
-        int combo = manager.comboCount; 
-        if(combo < comboStageHits) 
+        int combo = manager.comboCount;
+        Debug.Log(combo);
+        if (combo < 5) 
         {
+            audioManagerScript.PlaySound("Bumper1");
             return 1; 
         }
 
-        if (combo < comboStageHits * 2)
+        //if (combo < comboStageHits * 2) //alternative combo stage calculation
+        if (combo < 12)
         {
+            audioManagerScript.PlaySound("Bumper2");
             return 2;
         }
 
-        if (combo < comboStageHits * 3)
+        if (combo < 22)
         {
+            audioManagerScript.PlaySound("Bumper3");
             return 3;
         }
 
-        if (combo < comboStageHits * 4)
+        if (combo < 30)
         {
+            audioManagerScript.PlaySound("Bumper4");
             return 4;
         }
 
+        audioManagerScript.PlaySound("Bumper5");
         return 5;
     }
 }
