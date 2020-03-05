@@ -152,6 +152,11 @@ public class BallAttach : MonoBehaviour
         {
             audioManagerScript.PlaySound("BouncingWall"); 
         }
+
+        if (other.CompareTag("Blocker"))
+        {
+            audioManagerScript.PlaySound("PadHit");
+        }
     }
 
     private void OnTriggerExit(Collider other)
