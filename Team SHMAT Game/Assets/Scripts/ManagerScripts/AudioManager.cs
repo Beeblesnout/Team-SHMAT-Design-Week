@@ -29,11 +29,20 @@ public class AudioManager : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
 
+        if (sceneName == "StartMenu")
+        {
+            //background music is played instead of playOneShot 
+            Sound s = Array.Find(soundArray, sound => sound.name == "MenuTheme");
+            s.source.Play();
+            return; 
+        }
+
         if (sceneName == "MainGame")
         {
             //background music is played instead of playOneShot 
             Sound s = Array.Find(soundArray, sound => sound.name == "Theme");
             s.source.Play();
+            return;
         }
     }
 
