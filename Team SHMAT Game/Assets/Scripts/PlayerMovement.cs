@@ -113,6 +113,8 @@ public abstract class PlayerMovement : MonoBehaviour
             return;
         }
 
+        audioManagerScript.PlaySound("Dash");
+        
         isCharging = true;
         chargeDirection = moveDirection; //set charge direction so player cannot change it during charge 
 
