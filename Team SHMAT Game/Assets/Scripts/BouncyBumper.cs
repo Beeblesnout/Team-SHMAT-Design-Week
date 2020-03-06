@@ -17,6 +17,13 @@ public class BouncyBumper : MonoBehaviour
     private float bumperForce = 7f;
     //private int comboStageHits = 5; //how many bounces are required for combo to advance to the next point-awarding stage
 
+    public MeshRenderer mRenderer;
+    public bool isBumper;
+    [ColorUsage(false, true)]
+    public Color defaultGlow;
+    [ColorUsage(false, true)]
+    public Color boostGlow;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +32,7 @@ public class BouncyBumper : MonoBehaviour
         particleEffect = GetComponentInChildren<ParticleSystem>();
 
         startScale = transform.localScale;
+        SetGlow(0);
     }
 
     // Update is called once per frame
@@ -73,14 +81,32 @@ public class BouncyBumper : MonoBehaviour
     {
         float startTime = Time.time;
         float prog = 0;
+
         while (prog < 1)
         {
             prog = (Time.time - startTime) / bumpDuration;
             transform.localScale = Vector3.Scale(startScale, Vector3.one + (bumpCurve.Evaluate(prog) * bumpAmount));
             transform.localScale.Set(transform.localScale.x, startScale.y, transform.localScale.z);
+
+            SetGlow(bumpCurve.Evaluate(prog));
+
             yield return new WaitForEndOfFrame();
         }
+
         transform.localScale = startScale;
+    }
+
+    void SetGlow(float f)
+    {
+        if (isBumper)
+        {
+            mRenderer.materials[2].SetColor("_EmissionColor", Color.Lerp(defaultGlow, boostGlow, f));
+            mRenderer.materials[3].SetColor("_EmissionColor", Color.Lerp(defaultGlow, boostGlow, f));
+        }
+        else
+        {
+            mRenderer.material.SetColor("_EmissionColor", Color.Lerp(defaultGlow, boostGlow, f));
+        }
     }
 
     private int DetermineScore() //decided how many points to give out depending on combo count 

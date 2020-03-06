@@ -145,6 +145,10 @@ MonoBehaviour:
     m_RotationOrder: 4
   bumpDuration: 0.1
   bumpAmount: {x: 1, y: 0, z: 0}
+  mRenderer: {fileID: 337565414788874174}
+  isBumper: 0
+  defaultGlow: {r: 1.7905757, g: 0.54450256, b: 1.9999998, a: 0}
+  boostGlow: {r: 14.324606, g: 4.3560205, b: 15.999998, a: 0}
 --- !u!1 &3498931666919719740
 GameObject:
   m_ObjectHideFlags: 0

@@ -34,7 +34,8 @@ public abstract class PlayerMovement : MonoBehaviour
 
     public Material defaultColor;
     public Material chargeColor; //use to indicate whether character is charging
-    private MeshRenderer renderer;
+    // private new MeshRenderer renderer;
+    public ParticleSystem pSys;
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -42,7 +43,7 @@ public abstract class PlayerMovement : MonoBehaviour
         audioManagerScript = FindObjectOfType<AudioManager>();
 
         rb = GetComponent<Rigidbody>();
-        renderer = GetComponent<MeshRenderer>();
+        // renderer = GetComponent<MeshRenderer>();
 
         lookDirection = transform.forward;
     }
@@ -53,7 +54,7 @@ public abstract class PlayerMovement : MonoBehaviour
         GetInput(); 
         Move();
 
-        HandleMat();
+        // HandleMat();
     }
 
     private void Move()
@@ -89,17 +90,17 @@ public abstract class PlayerMovement : MonoBehaviour
         Gizmos.DrawRay(transform.position, transform.forward);
     }
 
-    private void HandleMat()
-    {
-        if (!isCharging)
-        {
-            renderer.material = defaultColor;
-        }
-        else
-        {
-            renderer.material = chargeColor; //turn orange while charging  
-        }
-    }
+    // private void HandleMat()
+    // {
+    //     if (!isCharging)
+    //     {
+    //         renderer.material = defaultColor;
+    //     }
+    //     else
+    //     {
+    //         renderer.material = chargeColor; //turn orange while charging  
+    //     }
+    // }
 
     protected virtual void GetInput()
     {
@@ -114,6 +115,8 @@ public abstract class PlayerMovement : MonoBehaviour
         }
 
         audioManagerScript.PlaySound("Dash");
+        
+        pSys.Emit(10);
         
         isCharging = true;
         chargeDirection = moveDirection; //set charge direction so player cannot change it during charge 

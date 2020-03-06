@@ -19,6 +19,7 @@ MonoBehaviour:
   chargeSpeed: 40
   defaultColor: {fileID: 2100000, guid: 520f016fd1c40604089b4f55419241cd, type: 2}
   chargeColor: {fileID: 2100000, guid: ddc7f5cc12b3e204a8a2ee1fac751571, type: 2}
+  pSys: {fileID: 7769403281637390687}
 --- !u!1001 &753202209723234606
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -162,6 +163,12 @@ GameObject:
 --- !u!4 &7735192941198624738 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2069411722799551651, guid: 467783827dca4d047a6fd2b0294e40cf,
+    type: 3}
+  m_PrefabInstance: {fileID: 8638161371793445697}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7769403281637390687 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2031859138115398174, guid: 467783827dca4d047a6fd2b0294e40cf,
     type: 3}
   m_PrefabInstance: {fileID: 8638161371793445697}
   m_PrefabAsset: {fileID: 0}
