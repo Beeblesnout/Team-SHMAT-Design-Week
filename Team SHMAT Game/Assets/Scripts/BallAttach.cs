@@ -12,6 +12,7 @@ public class BallAttach : MonoBehaviour
     /// Last player that carried the ball.
     /// </summary>
     public GameObject lastHost;
+    public bool player2;
 
     /// <summary>
     /// Determines how far the ball checks for attachable players.
@@ -32,6 +33,12 @@ public class BallAttach : MonoBehaviour
 
     private float minVel = 25;
     private float maxVel = 40;
+    public float overspeedDrag = .2f;
+
+    private MeshRenderer mRenderer;
+    public Material defaultMat;
+    public Material p1mat;
+    public Material p2mat;
 
     // Start is called before the first frame update
     void Start()
@@ -41,44 +48,46 @@ public class BallAttach : MonoBehaviour
 
         root = transform.parent;
         rb = root.GetComponent<Rigidbody>(); 
+        mRenderer = transform.parent.GetComponentInChildren<MeshRenderer>();
     }
 
-    // Collider[] player;
+    void Update()
+    {
+        if (lastHost != null)
+        {
+            PlayerMovement p = lastHost.GetComponent<PlayerMovement>();
+            player2 = p.playerNum == 1;
+            mRenderer.material = player2 ? p2mat : p1mat;
+        }
+        else
+        {
+            mRenderer.material = defaultMat;
+        }
+
+        // if (rb.velocity.magnitude > 0)
+        // {
+        //     float sign = Mathf.Sign(Vector3.Dot(Vector3.right, rb.velocity));
+        //     float angle = Vector3.Angle(Vector3.right, rb.velocity);
+
+            
+        // }
+    }
+
     void FixedUpdate()
     {
         float mag = rb.velocity.magnitude;
-        if (mag < minVel || mag > maxVel) //if ball's velocity exceeds limits 
+        if (mag < minVel) //if ball is moving too slow
         {
             Vector3 dir = rb.velocity.normalized;
-            mag = Mathf.Clamp(mag, minVel, maxVel);
-
+            mag = minVel; //hard set the ball to min vel
             rb.velocity = dir * mag; 
         }
-
-        //prevents multiple collision events from occuring
-        //ball cannot be grabbed normally if already attached to a specific player 
-        // if (!collided && transform.parent)
-        // {
-        //     if (Physics.OverlapSphereNonAlloc(transform.position, 1, player, LayerMask.GetMask("Player")) != 0)
-        //     {
-        //         collided = true;
-        //         AttachTo(player[0].gameObject);
-        //     }
-        //     else
-        //     {
-        //         collided = false;
-        //     }
-        // }
-
-        // if (collided) return; //prevents multiple collision events from occuring 
-        // if (transform.parent != null) return; //ball cannot be grabbed normally if already attached to a specific player 
-
-        // if (other.gameObject.tag == "Player")
-        // {
-        //     AttachTo(other.gameObject);
-
-        //     collided = true;
-        // }
+        else if (mag > maxVel)
+        {
+            Vector3 dir = rb.velocity.normalized;
+            mag = Mathf.Lerp(mag, maxVel, overspeedDrag);
+            rb.velocity = dir * mag; 
+        }
     }
 
     /// <summary>

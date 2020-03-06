@@ -2834,6 +2834,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3459248016957894661, guid: 8ffbdba733f21a64bb45cbcde73ad605,
+        type: 3}
+      propertyPath: defaultMat
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a402856c6870944bbdd98991216ba10, type: 2}
+    - target: {fileID: 3459248016957894661, guid: 8ffbdba733f21a64bb45cbcde73ad605,
+        type: 3}
+      propertyPath: p1mat
+      value: 
+      objectReference: {fileID: 2100000, guid: 55058677ff5bc3046a3f7a81c2f56b00, type: 2}
+    - target: {fileID: 3459248016957894661, guid: 8ffbdba733f21a64bb45cbcde73ad605,
+        type: 3}
+      propertyPath: p2mat
+      value: 
+      objectReference: {fileID: 2100000, guid: 88273e9a99922d6438fc6b1c3195bb27, type: 2}
     - target: {fileID: 7388040743865722626, guid: 8ffbdba733f21a64bb45cbcde73ad605,
         type: 3}
       propertyPath: m_CollisionDetection
