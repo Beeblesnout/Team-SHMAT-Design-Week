@@ -65,8 +65,11 @@ MonoBehaviour:
   root: {fileID: 0}
   overspeedDrag: 0.2
   defaultMat: {fileID: 2100000, guid: 0a402856c6870944bbdd98991216ba10, type: 2}
-  p1mat: {fileID: 2100000, guid: 55058677ff5bc3046a3f7a81c2f56b00, type: 2}
-  p2mat: {fileID: 2100000, guid: 88273e9a99922d6438fc6b1c3195bb27, type: 2}
+  p1Mat: {fileID: 2100000, guid: 55058677ff5bc3046a3f7a81c2f56b00, type: 2}
+  p2Mat: {fileID: 2100000, guid: 88273e9a99922d6438fc6b1c3195bb27, type: 2}
+  defaultLineMat: {fileID: 2100000, guid: 5fba133d809e5734eb01126c8f130aec, type: 2}
+  p1LineMat: {fileID: 2100000, guid: 6a1477ab1316df440996a406c2790de6, type: 2}
+  p2LineMat: {fileID: 2100000, guid: c6628b1473bec474eb640c0a7df49d31, type: 2}
 --- !u!1 &1378130739372450254
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,7 +356,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5fba133d809e5734eb01126c8f130aec, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -405,7 +408,7 @@ TrailRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}

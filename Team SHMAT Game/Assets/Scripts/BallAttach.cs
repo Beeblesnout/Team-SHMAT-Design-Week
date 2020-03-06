@@ -37,8 +37,13 @@ public class BallAttach : MonoBehaviour
 
     private MeshRenderer mRenderer;
     public Material defaultMat;
-    public Material p1mat;
-    public Material p2mat;
+    public Material p1Mat;
+    public Material p2Mat;
+
+    private TrailRenderer line;
+    public Material defaultLineMat;
+    public Material p1LineMat;
+    public Material p2LineMat;
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +54,7 @@ public class BallAttach : MonoBehaviour
         root = transform.parent;
         rb = root.GetComponent<Rigidbody>(); 
         mRenderer = transform.parent.GetComponentInChildren<MeshRenderer>();
+        line = transform.parent.GetComponentInChildren<TrailRenderer>();
     }
 
     void Update()
@@ -57,19 +63,19 @@ public class BallAttach : MonoBehaviour
         {
             PlayerMovement p = lastHost.GetComponent<PlayerMovement>();
             player2 = p.playerNum == 1;
-            mRenderer.material = player2 ? p2mat : p1mat;
+            mRenderer.material = player2 ? p2Mat : p1Mat;
+            line.material = player2 ? p1LineMat : p2LineMat;
         }
         else
         {
             mRenderer.material = defaultMat;
+            line.material = defaultLineMat;
         }
 
         // if (rb.velocity.magnitude > 0)
         // {
         //     float sign = Mathf.Sign(Vector3.Dot(Vector3.right, rb.velocity));
         //     float angle = Vector3.Angle(Vector3.right, rb.velocity);
-
-            
         // }
     }
 
