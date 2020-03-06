@@ -182,4 +182,9 @@ public class BallAttach : MonoBehaviour
         yield return new WaitForSeconds(0.25f);
         collided = false; //reset collision events
     }
+
+    public void ResetHost()
+    {
+        lastHost = null; 
+    }
 }

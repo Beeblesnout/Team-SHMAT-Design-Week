@@ -67,10 +67,19 @@ public class GameManager : SingletonBase<GameManager>
         }
 
         //check time remaining
-        /*if(currentTime <= 0)
+        if(currentTime <= 0)
         {
-            if(player1Points > )
-        }*/
+            if(player1Points > player2Points)
+            {
+                winner = 1;
+                //win scene switch here
+            }
+            else
+            {
+                winner = 2;
+                //win scene switch here
+            }
+        }
     }
 
     public void GoalPause(GameObject targetBall)

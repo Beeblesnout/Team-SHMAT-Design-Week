@@ -26,7 +26,7 @@ public class BallReset : MonoBehaviour
         BallAttach ballScript = transform.GetChild(0).GetComponent<BallAttach>();
         if (ballScript.lastHost != null)
         {
-            ballScript.lastHost = null; //encaptulate later after pull
+            ballScript.ResetHost();
         }
 
         transform.position = resetPoint.position; 
