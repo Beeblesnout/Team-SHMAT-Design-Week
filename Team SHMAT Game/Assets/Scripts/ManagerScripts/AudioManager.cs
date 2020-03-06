@@ -39,9 +39,13 @@ public class AudioManager : MonoBehaviour
 
         if (sceneName == "MainGame")
         {
-            //background music is played instead of playOneShot 
-            Sound s = Array.Find(soundArray, sound => sound.name == "Theme");
-            s.source.Play();
+            PlaySound("ThemeIntro");
+            return; 
+        }
+
+        if (sceneName == "WinScreen")
+        {
+            PlaySound("Start");
             return;
         }
     }
@@ -57,5 +61,12 @@ public class AudioManager : MonoBehaviour
         {
             Debug.Log("Missing audio file" + name);
         }
+    }
+
+    private IEnumerator WaitForIntroToBeFinished()
+    {
+        yield return new WaitForSeconds(34f);
+        Sound s = Array.Find(soundArray, sound => sound.name == "Theme");
+        s.source.Play();
     }
 }
