@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class UIManager_Scene1 : MonoBehaviour
 {
-    private SceneController sceneManager;
+    //private SceneController sceneManager;
     public GameObject startText;
 
     private float textShowTime = 1.2f;
@@ -17,7 +17,7 @@ public class UIManager_Scene1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sceneManager = FindObjectOfType<SceneController>();
+        //sceneManager = FindObjectOfType<SceneController>();
     }
 
     // Update is called once per frame
@@ -35,7 +35,7 @@ public class UIManager_Scene1 : MonoBehaviour
 
             if (Input.anyKeyDown)
             {
-                SceneController.Instance.SwitchSceneTo("MainGame");
+                SceneController.SwitchSceneTo("MainGame");
             }
         }
     }

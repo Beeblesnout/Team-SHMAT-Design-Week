@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneController : SingletonBase<SceneController>
+public static class SceneController
 {
-    public int winner;
+    public static int winner;
 
-    public void SwitchSceneTo (string sceneName)
+    public static void SwitchSceneTo (string sceneName)
     {
         SceneManager.LoadScene(sceneName);
     }
 
-    public void SetWinner (int winnerNum)
+    public static void SetWinner (int winnerNum)
     {
         winner = winnerNum; 
     }

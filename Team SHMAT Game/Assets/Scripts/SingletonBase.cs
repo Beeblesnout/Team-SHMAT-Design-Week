@@ -37,7 +37,14 @@ public abstract class SingletonBase<T> : MonoBehaviour where T : MonoBehaviour
 
     public virtual void Awake()
     {
-        DontDestroyOnLoad(this);
+        if (sm_instance != null)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            DontDestroyOnLoad(this);
+        }
     }
 
     public virtual void OnApplicationQuit()

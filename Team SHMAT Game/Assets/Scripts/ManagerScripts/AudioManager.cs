@@ -46,6 +46,7 @@ public class AudioManager : MonoBehaviour
         if (sceneName == "WinScreen")
         {
             PlaySound("Start");
+            StartCoroutine(WaitForIntroToBeFinished()); 
             return;
         }
     }

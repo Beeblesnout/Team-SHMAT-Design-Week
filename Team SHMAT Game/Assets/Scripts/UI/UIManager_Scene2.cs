@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class UIManager_Scene2 : MonoBehaviour
 {
-    private SceneController sceneManager;
+    //private SceneController sceneManager;
     public GameObject restartText;
     public Text winnerText; 
 
@@ -18,9 +18,9 @@ public class UIManager_Scene2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sceneManager = FindObjectOfType<SceneController>();
+        //sceneManager = FindObjectOfType<SceneController>();
 
-        if(SceneController.Instance.winner == 1)
+        if(SceneController.winner == 1)
         {
             winnerText.text = "BLUE WINS!";
         }
@@ -45,7 +45,7 @@ public class UIManager_Scene2 : MonoBehaviour
 
             if (Input.anyKeyDown)
             {
-                SceneController.Instance.SwitchSceneTo("StartMenu");
+                SceneController.SwitchSceneTo("StartMenu");
             }
         }
     }
