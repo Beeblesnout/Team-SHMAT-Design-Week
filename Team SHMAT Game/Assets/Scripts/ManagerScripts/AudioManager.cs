@@ -40,14 +40,13 @@ public class AudioManager : MonoBehaviour
         if (sceneName == "MainGame")
         {
             PlaySound("ThemeIntro");
+            StartCoroutine(WaitForIntroToBeFinished());
             return; 
         }
 
         if (sceneName == "WinScreen")
         {
             PlaySound("Start");
-            StartCoroutine(WaitForIntroToBeFinished()); 
-            return;
         }
     }
 
@@ -66,7 +65,7 @@ public class AudioManager : MonoBehaviour
 
     private IEnumerator WaitForIntroToBeFinished()
     {
-        yield return new WaitForSeconds(34f);
+        yield return new WaitForSecondsRealtime(33f);
         Sound s = Array.Find(soundArray, sound => sound.name == "Theme");
         s.source.Play();
     }
