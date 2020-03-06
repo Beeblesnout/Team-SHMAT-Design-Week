@@ -29,7 +29,7 @@ public class CamMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void FixedUpdate()
     {
         if (targets.Count == 0)
         {

@@ -4989,6 +4989,10 @@ MonoBehaviour:
     m_RotationOrder: 4
   bumpDuration: 0.15
   bumpAmount: {x: 0.2, y: 0, z: 0.2}
+  mRenderer: {fileID: 289668742100574325}
+  isBumper: 1
+  defaultGlow: {r: 3.5811515, g: 1.0890051, b: 3.9999995, a: 0}
+  boostGlow: {r: 28.649212, g: 8.712041, b: 31.999996, a: 0}
 --- !u!1001 &8005191448132390304
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5071,6 +5075,12 @@ PrefabInstance:
 --- !u!4 &3054166207607645882 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: ca8082a307265d14586e5a1353b7f16c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8005191448132390304}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &289668742100574325 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -1504981713932161579, guid: ca8082a307265d14586e5a1353b7f16c,
     type: 3}
   m_PrefabInstance: {fileID: 8005191448132390304}
   m_PrefabAsset: {fileID: 0}
